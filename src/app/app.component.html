@@ -1,5 +1,9 @@
 <div class="container">
   <h1> Xing & Max Beer Inventory </h1>
+  <select>
+     <option value="allKegs">All Kegs</option>
+     <option value="ipa">Ipa Kegs</option>
+   </select>
   <div class="row">
 <div *ngFor="let keg of kegs">
     <div class="col-lg-6">
@@ -16,9 +20,16 @@
         <input *ngIf="keg.editAlcoholContent" [(ngModel)]="keg.alcoholContent" placeholder="keg.alcoholContent">
         <li (click)="keg.editType=!keg.editType">Type: {{keg.type}}</li>
         <input *ngIf="keg.editType" [(ngModel)]="keg.type" placeholder="keg.type">
-        <li [class]="runningLow(keg)" (click)="keg.editPints=!keg.editPints" (click)="lowSale(keg)">Pints Left: {{keg.pints}} <button (click)="sellPint(keg)" > Sell a Pint!</button> <button (click)="sellGrowler(keg)" > Sell a Sm Growler!</button>
-        <button (click)="sellLgGrowler(keg)" > Sell a Lg Growler!</button></li>
+        <li [class]="runningLow(keg)" (click)="keg.editPints=!keg.editPints" (click)="lowSale(keg)">Pints Left: {{keg.pints}}</li>
         <input *ngIf="keg.editPints" [(ngModel)]="keg.pints" placeholder="keg.pints">
+        <div class="row">
+           <button (click)="sellPint(keg)"> Sell a Pint!
+           </button>
+           <button (click)="sellGrowler(keg)"> Sell a Sm Growler!
+           </button>
+           <button (click)="sellLgGrowler(keg)"> Sell a Lg Growler!
+          </button>
+        </div>
       </ul>
     </div>
   </div>

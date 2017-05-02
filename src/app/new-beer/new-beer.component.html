@@ -1,12 +1,14 @@
 <div class="row">
   <h3>Add new beer</h3>
   <form>
-    <input #newName placeholder="Name" required>
-    <input #newBrand placeholder="Brewery" required>
-    <input #newPrice placeholder="Price" required>
-    <input #newAlcoholContent placeholder="Alcohol Content" required>
-    <input #newType placeholder="Type" required>
-    <input #newPints placeholder="Amount in Pints" required>
+    <input class="form-control" #newName placeholder="Name" required>
+    <input class="form-control" #newBrand placeholder="Brewery" required>
+    <input class="form-control" #newPrice placeholder="Price" required>
+    <input class="form-control" #newAlcoholContent placeholder="Alcohol Content" required>
+    <input class="form-control" #newType placeholder="Type" required>
+    <input class="form-control" #newPints placeholder="Amount in Pints" required>
   <button (click)="submitForm(newName.value, newBrand.value, newPrice.value, newAlcoholContent.value, newType.value, newPints.value)">Add Beer</button>
   </form>
 </div>
+
+<li *ngFor="let beerType of childKegList | typeofbeer">
