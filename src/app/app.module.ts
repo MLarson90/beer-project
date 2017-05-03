@@ -5,12 +5,14 @@ import { HttpModule } from '@angular/http';
 import { TypeofbeerPipe } from './typeofbeer.pipe';
 import { AppComponent } from './app.component';
 import { NewBeerComponent } from './new-beer/new-beer.component';
+import { NewpipePipe } from './newpipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewBeerComponent,
-    TypeofbeerPipe
+    TypeofbeerPipe,
+    NewpipePipe
   ],
   imports: [
     BrowserModule,

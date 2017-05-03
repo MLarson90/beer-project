@@ -1,11 +1,14 @@
 <div class="container">
   <h1> Xing & Max Beer Inventory </h1>
-  <select>
+  <select (change)="onChange($event.target.value)">
      <option value="allKegs">All Kegs</option>
-     <option value="ipa">Ipa Kegs</option>
+     <option value="IPA">Ipa Kegs</option>
+     <option value="Lager">Lager Kegs</option>
+     <option value="Stout">Stout Kegs</option>
+     <option value="Ale">Ale Kegs</option>
    </select>
   <div class="row">
-<div *ngFor="let keg of kegs">
+<div *ngFor="let keg of kegs | typeofbeer: filterByType">
     <div class="col-lg-6">
     <h1 (click)="keg.editName=!keg.editName">
       {{keg.name}}

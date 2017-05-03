@@ -75,4 +75,9 @@ export class AppComponent {
   addKeg(newKegFromChild: Keg){
     this.kegs.push(newKegFromChild);
   }
+
+  filterByType: string = "All kegs";
+  onChange(optionFromMenu){
+    this.filterByType = optionFromMenu;
+  }
 }
