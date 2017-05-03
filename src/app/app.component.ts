@@ -87,4 +87,8 @@ export class AppComponent {
   onChange(optionFromMenu){
     this.filterByType = optionFromMenu;
   }
+  filterByPrice: string = "All kegs";
+  otherChange(optionFromMenu){
+    this.filterByPrice = optionFromMenu;
+  }
 }

@@ -7,8 +7,12 @@
      <option value="Stout">Stout Kegs</option>
      <option value="Ale">Ale Kegs</option>
    </select>
+   <select (change)="otherChange($event.target.value)">
+      <option value="allKegs">All Kegs</option>
+      <option value="cheap">Cheap Kegs</option>
+    </select>
   <div class="row">
-<div *ngFor="let keg of kegs | typeofbeer: filterByType">
+<div *ngFor="let keg of kegs | typeofbeer: filterByType | newpipe: filterByPrice">
     <div class="col-lg-6">
     <h1 (click)="keg.editName=!keg.editName">
       {{keg.name}}
