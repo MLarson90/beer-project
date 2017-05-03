@@ -58,6 +58,13 @@ export class AppComponent {
       keg.price = keg.price;
     }
   }
+  resetPrice(keg){
+    if(keg.pints > 29){
+      keg.price = keg.restock;
+    } else {
+      keg.price = keg.saleUder30;
+    }
+  }
   howDrunk (keg) {
     if (keg.alcoholContent < 5) {
       return 'bg-info';

@@ -23,14 +23,14 @@
         <input *ngIf="keg.editAlcoholContent" [(ngModel)]="keg.alcoholContent" placeholder="keg.alcoholContent">
         <li (click)="keg.editType=!keg.editType">Type: {{keg.type}}</li>
         <input *ngIf="keg.editType" [(ngModel)]="keg.type" placeholder="keg.type">
-        <li [class]="runningLow(keg)" (click)="keg.editPints=!keg.editPints" (click)="lowSale(keg)">Pints Left: {{keg.pints}}</li>
-        <input *ngIf="keg.editPints" [(ngModel)]="keg.pints" placeholder="keg.pints">
+        <li [class]="runningLow(keg)" (click)="keg.editPints=!keg.editPints" (click)="resetPrice(keg)" >Pints Left: {{keg.pints}}</li>
+        <input *ngIf="keg.editPints" [(ngModel)]="keg.pints" placeholder="keg.pints" >
         <div class="row">
-           <button (click)="sellPint(keg)"> Sell a Pint!
+           <button (click)="sellPint(keg)" (click)="lowSale(keg)"> Sell a Pint!
            </button>
-           <button (click)="sellGrowler(keg)"> Sell a Sm Growler!
+           <button (click)="sellGrowler(keg)" (click)="lowSale(keg)"> Sell a Sm Growler!
            </button>
-           <button (click)="sellLgGrowler(keg)"> Sell a Lg Growler!
+           <button (click)="sellLgGrowler(keg)" (click)="lowSale(keg)"> Sell a Lg Growler!
           </button>
         </div>
       </ul>
