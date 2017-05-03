@@ -1,0 +1,72 @@
+{"kegs":[{
+    "name": "Bud Light",
+    "brand": "Budweizer",
+    "price": 3,
+    "alcoholContent": 3.3,
+    "type": "Lager",
+    "pints": 124
+  },{
+    "name": "Spotted Cow",
+    "brand": "New Glarus",
+    "price": 6,
+    "alcoholContent": 5.4,
+    "type": "Ale",
+    "pints": 124
+  },{
+    "name": "Lucille",
+    "brand": "Georgetown Brewing",
+    "price": 6,
+    "alcoholContent": 7.2,
+    "type": "IPA",
+    "pints": 124
+  },{
+    "name": "Assassin",
+    "brand": "Toppling Goliath",
+    "price": 7,
+    "alcoholContent": 12,
+    "type": "Stout",
+    "pints":124
+  },{
+    "name": "Cowboy Trail",
+    "brand": "Six Corners",
+    "price": 6,
+    "alcoholContent": 5.1,
+    "type": "Ale",
+    "pints":124
+  },{
+    "name": "Hercules",
+    "brand": "Great Divid",
+    "price": 7,
+    "alcoholContent": 10,
+    "type": "IPA",
+    "pints":124
+  },{
+    "name": "Insane Rush",
+    "brand": "Bootstrap",
+    "price": 7,
+    "alcoholContent": 7,
+    "type": "IPA",
+    "pints":124
+  },{
+    "name": "Hamm's",
+    "brand": "Hamm's",
+    "price": 3,
+    "alcoholContent": 4.6,
+    "type": "Lager",
+    "pints":124
+  },{
+    "name": "A Little Supmin' Sumpon'",
+    "brand": "Lagunintas",
+    "price": 6,
+    "alcoholContent": 7.5,
+    "type": "Ale",
+    "pints":124
+  },{
+    "name": "Nut Smasher",
+    "brand": "Willoughby",
+    "price": 10,
+    "alcoholContent": 11,
+    "type": "Stout",
+    "pints":124
+    }]
+}

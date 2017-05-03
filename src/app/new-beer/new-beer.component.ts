@@ -1,6 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Keg } from 'app/keg.model';
 
+
 @Component({
   selector: 'app-new-beer',
   templateUrl: './new-beer.component.html',

@@ -12,7 +12,7 @@
       <option value="cheap">Cheap Kegs</option>
     </select>
   <div class="row">
-<div *ngFor="let keg of kegs | typeofbeer: filterByType | newpipe: filterByPrice">
+<div *ngFor="let keg of kegs | async | typeofbeer: filterByType | newpipe: filterByPrice">
     <div class="col-lg-6">
     <h1 (click)="keg.editName=!keg.editName">
       {{keg.name}}

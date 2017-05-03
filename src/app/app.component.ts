@@ -1,26 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Keg } from 'app/keg.model';
-
+import { KegService } from 'app/keg.service';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [KegService,AngularFireDatabase]
 })
-export class AppComponent {
-  title = 'app works!';
-  kegs: Keg[]=[
-    new Keg("Bud Light", "Budweizer", 3, 3.2, "Lager", 124),
-    new Keg("Spotted Cow", "New Glarus", 5, 5.4, "Ale", 124),
-    new Keg("Lucille", "Georgetown Brewing", 5, 7.2, "IPA", 124),
-    new Keg("Assassin", "Toppling Goliath", 7, 12, "Stout", 124),
-    new Keg("Hercules", "Great Divid", 7, 10, "IPA", 124),
-    new Keg("Cowboy Trail", "Six Corners", 5, 5.1, "Ale", 124),
-    new Keg("Insane Rush", "Bootstrap", 6, 7, "IPA", 124),
-    new Keg("Hamm's", "Hamm's", 3, 4.6, "Lager", 124),
-    new Keg("A Little Sumpin' Sumpin'", "Lagunitas", 5, 7.5, "Ale", 124),
-    new Keg("Nut Smasher", "Willoughby", 7, 11, "Stout", 124)
-  ];
+export class AppComponent implements OnInit{
 
+  title = 'app works!';
+  kegs: FirebaseListObservable<any[]>;
+  constructor(private kegService: KegService){}
+  ngOnInit(){
+    this.kegs = this.kegService.getKegs();
+  }
   sellPint(keg) {
     if (keg.pints > 0) {
       return keg.pints -= 1;
