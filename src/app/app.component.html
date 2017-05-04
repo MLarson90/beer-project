@@ -29,18 +29,21 @@
         <input *ngIf="keg.editType" [(ngModel)]="keg.type" placeholder="keg.type">
         <li [class]="runningLow(keg)" (click)="keg.editPints=!keg.editPints" (click)="resetPrice(keg)" >Pints Left: {{keg.pints}}</li>
         <input *ngIf="keg.editPints" [(ngModel)]="keg.pints" placeholder="keg.pints" >
+        <br>
         <div class="row">
-           <button (click)="sellPint(keg)" (click)="lowSale(keg)"> Sell a Pint!
+           <button class="btn btn-success btn-sm"  (click)="sellPint(keg)" (click)="lowSale(keg)" (click)="beginUpdatingKeg(keg)"> Sell a Pint!
            </button>
-           <button (click)="sellGrowler(keg)" (click)="lowSale(keg)"> Sell a Sm Growler!
+           <button class="btn btn-warning btn-sm" (click)="sellGrowler(keg)" (click)="lowSale(keg)" (click)="beginUpdatingKeg(keg)"> Sell a Sm Growler!
            </button>
-           <button (click)="sellLgGrowler(keg)" (click)="lowSale(keg)"> Sell a Lg Growler!
+           <button class="btn btn-warning btn-sm" (click)="sellLgGrowler(keg)" (click)="lowSale(keg)" (click)="beginUpdatingKeg(keg)"> Sell a Lg Growler!
           </button>
+          <button class="btn btn-primary btn-sm" (click)="beginUpdatingKeg(keg)">Submit Update</button>
         </div>
       </ul>
     </div>
   </div>
 </div>
+
 
 <div id="newBeer">
   <app-new-beer (newKegSender)="addKeg($event)"></app-new-beer>

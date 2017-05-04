@@ -86,4 +86,7 @@ export class AppComponent implements OnInit{
   otherChange(optionFromMenu){
     this.filterByPrice = optionFromMenu;
   }
+  beginUpdatingKeg(kegToUpdate){
+    this.kegService.upDateKeg(kegToUpdate);
+  }
 }
