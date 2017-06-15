@@ -5,7 +5,7 @@ import { Keg } from './keg.model';
   name: "typeofbeer",
   pure: false
 })
-export class TypeofbeerPipe implements PipeTransform {
+export class BeerTypePipe implements PipeTransform {
   transform(input: Keg[], filterByType){
     var output: Keg[] = [];
     if(filterByType === "IPA"){

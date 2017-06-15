@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { TypeofbeerPipe } from './typeofbeer.pipe';
+import { BeerTypePipe } from './typeofbeer.pipe';
 import { AppComponent } from './app.component';
 import { NewBeerComponent } from './new-beer/new-beer.component';
-import { NewpipePipe } from './newpipe.pipe';
+import { PricePipe } from './newpipe.pipe';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 
@@ -21,7 +21,7 @@ export const firebaseConfig = {
     AppComponent,
     NewBeerComponent,
     TypeofbeerPipe,
-    NewpipePipe
+    PricePipe
   ],
   imports: [
     BrowserModule,

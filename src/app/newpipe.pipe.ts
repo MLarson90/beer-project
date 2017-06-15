@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Keg } from './keg.model';
 
 @Pipe({
-  name: 'newpipe'
+  name: 'pricepipe'
 })
-export class NewpipePipe implements PipeTransform {
+export class PricePipe implements PipeTransform {
 
   transform(input:Keg[], filterByPrice) {
     var output: Keg[]=[];
