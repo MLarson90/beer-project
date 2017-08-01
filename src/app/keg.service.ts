@@ -10,21 +10,23 @@ export class KegService {
     this.kegs = angularFire.list('/kegs');
   }
 
-  getKegs(){
+  getKegs() {
     return this.kegs;
   }
-  getKegbyId(kegId: string){
+  getKegbyId(kegId: string) {
     return this.angularFire.object('/kegs/' + kegId);
   }
-  upDateKeg(localUpdatedKeg){
+  upDateKeg(localUpdatedKeg) {
     var kegEntryInFireBase = this.getKegbyId(localUpdatedKeg.$key);
-    kegEntryInFireBase.update({name: localUpdatedKeg.name,
-                               brand: localUpdatedKeg.brand,
-                               price: localUpdatedKeg.price,
-                               alcoholContent: localUpdatedKeg.alcoholContent,
-                               type: localUpdatedKeg.type,
-                               pints: localUpdatedKeg.pints,
-                               saleUder30: localUpdatedKeg.saleUder30,
-                               restock: localUpdatedKeg.price});
+    kegEntryInFireBase.update({
+      name: localUpdatedKeg.name,
+      brand: localUpdatedKeg.brand,
+      price: localUpdatedKeg.price,
+      alcoholContent: localUpdatedKeg.alcoholContent,
+      type: localUpdatedKeg.type,
+      pints: localUpdatedKeg.pints,
+      saleUder30: localUpdatedKeg.saleUder30,
+      restock: localUpdatedKeg.price
+    });
   }
 }

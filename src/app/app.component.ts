@@ -6,14 +6,14 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [KegService,AngularFireDatabase]
+  providers: [KegService, AngularFireDatabase]
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   title = 'app works!';
   kegs: FirebaseListObservable<any[]>;
-  constructor(private kegService: KegService){}
-  ngOnInit(){
+  constructor(private kegService: KegService) { }
+  ngOnInit() {
     this.kegs = this.kegService.getKegs();
   }
   sellPint(keg) {
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit{
     }
   }
   sellGrowler(keg) {
-    if(keg.pints < 2){
+    if (keg.pints < 2) {
       alert("Not Enough Beer!");
     } else if (keg.pints > 0) {
       return keg.pints -= 2;
@@ -33,9 +33,9 @@ export class AppComponent implements OnInit{
     }
   }
   sellLgGrowler(keg) {
-    if(keg.pints < 4){
+    if (keg.pints < 4) {
       alert("Not Enough Beer!");
-    }else if (keg.pints > 0) {
+    } else if (keg.pints > 0) {
       return keg.pints -= 4;
     } else {
       return keg.pints = 0;
@@ -44,8 +44,8 @@ export class AppComponent implements OnInit{
   runningLow(keg) {
     if (keg.pints < 11) {
       return 'bg-danger';
+    }
   }
-}
   lowSale(keg) {
     if (keg.pints < 30) {
       keg.price = keg.saleUder30;
@@ -53,40 +53,40 @@ export class AppComponent implements OnInit{
       keg.price = keg.price;
     }
   }
-  resetPrice(keg){
-    if(keg.pints > 29){
+  resetPrice(keg) {
+    if (keg.pints > 29) {
       keg.price = keg.restock;
     } else {
       keg.price = keg.saleUder30;
     }
   }
-  howDrunk (keg) {
+  howDrunk(keg) {
     if (keg.alcoholContent < 5) {
       return 'bg-info';
-    }else if (keg.alcoholContent > 7) {
+    } else if (keg.alcoholContent > 7) {
       return 'bg-danger';
     } else {
       return 'bg-warning';
     }
   }
   onSale(keg) {
-    if(keg.pints < 30) {
+    if (keg.pints < 30) {
       return 'bg-success';
     }
   }
-  addKeg(newKegFromChild: Keg){
+  addKeg(newKegFromChild: Keg) {
     this.kegs.push(newKegFromChild);
   }
 
   filterByType: string = "All kegs";
-  onChange(optionFromMenu){
+  onChange(optionFromMenu) {
     this.filterByType = optionFromMenu;
   }
   filterByPrice: string = "All kegs";
-  otherChange(optionFromMenu){
+  otherChange(optionFromMenu) {
     this.filterByPrice = optionFromMenu;
   }
-  beginUpdatingKeg(kegToUpdate){
+  beginUpdatingKeg(kegToUpdate) {
     this.kegService.upDateKeg(kegToUpdate);
   }
 }
